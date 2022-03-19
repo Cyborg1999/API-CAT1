@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Config file
  * PHP version * ^7
@@ -15,7 +14,7 @@
  * @link * Null
  */
 
-$conf["_dbType"] = "PDO";
+$conf["_dbType"] = "mysqli";
 $conf["_dbHost"] = "Localhost";
 $conf["_dbName"] ="authordb";
 $conf["_dbUser"] = "root";

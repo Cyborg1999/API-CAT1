@@ -83,9 +83,9 @@ class DbConnect
      */
     public function connection($DBTYPE, $DBHOST, $DBNAME, $DBUSER, $DBPASS, $DBPORT)
     {
-         $this->connection = new mysqli($DBHOST, $DBUSER, $DBPASS, $DBNAME);
+         $this->_connect = new mysqli($DBHOST, $DBUSER, $DBPASS, $DBNAME);
 
-        if ($this->connection->connect_error) {
+        if ($this->_connect->connect_error) {
             return "Connection Failure";
         } else {
             print "Connection Successfull";

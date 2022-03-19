@@ -4,7 +4,7 @@
  * Constants file will contain db constants
  * PHP version * ^7
  * 
- * @category Constants
+ * @category Config
  *  
  * @package Null
  * 
@@ -15,10 +15,10 @@
  * @link * Null
  */
 
-define("DBTYPE", $conf["_db_type"]);
-define("DBHOST", $conf["_db_host"]);
-define("DBNAME", $conf["_db_name"]);
-define("DBUSER", $conf["_db_user"]);
-define("DBPASS", $conf["_db_pass"]);
-define("DBPORT", $conf["_db_port"]);
+define("DBTYPE", $conf["_dbType"]);
+define("DBHOST", $conf["_dbHost"]);
+define("DBNAME", $conf["_dbName"]);
+define("DBUSER", $conf["_dbUser"]);
+define("DBPASS", $conf["_dbPass"]);
+define("DBPORT", $conf["_dbPort"]);
 

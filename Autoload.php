@@ -19,4 +19,6 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . "configs/constants.php";
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . "configs/DbConn.php";
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . "configs/config.php";
 
-$MSQL =new DbConnect($DBTYPE, $DBHOST, $DBNAME, $DBUSER, $DBPASS, $DBPORT);
+$DBConn =new DbConnect($DBTYPE, $DBHOST, $DBNAME, $DBUSER, $DBPASS, $DBPORT);
+
+print_r($DBConn);
