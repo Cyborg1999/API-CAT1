@@ -15,9 +15,9 @@
  */
 session_start();
 
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . "configs/constants.php";
-require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . "configs/DbConn.php";
 require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . "configs/config.php";
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . "configs/DbConn.php";
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . "configs/constants.php";
 
 $DBConn =new DbConnect($DBTYPE, $DBHOST, $DBNAME, $DBUSER, $DBPASS, $DBPORT);
 
