@@ -15,10 +15,10 @@
  * @link * Null
  */
 
-define("DBTYPE", $conf["_dbType"]);
-define("DBHOST", $conf["_dbHost"]);
-define("DBNAME", $conf["_dbName"]);
-define("DBUSER", $conf["_dbUser"]);
-define("DBPASS", $conf["_dbPass"]);
-define("DBPORT", $conf["_dbPort"]);
+define("DBTYPE", $conf['_dbType']);
+define("DBHOST", $conf['_dbHost']);
+define("DBNAME", $conf['_dbName']);
+define("DBUSER", $conf['_dbUser']);
+define("DBPASS", $conf['_dbPass']);
+define("DBPORT", $conf['_dbPort']);
 

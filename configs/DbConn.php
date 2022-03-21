@@ -83,12 +83,32 @@ class DbConnect
      */
     public function connection($DBTYPE, $DBHOST, $DBNAME, $DBUSER, $DBPASS, $DBPORT)
     {
-         $this->_connect = new mysqli($DBHOST, $DBUSER, $DBPASS, $DBNAME);
+        switch($DBTYPE) {
+        case 'MySQLi':
+            if ($DBPORT<> null) {
+                $DBHOST.= ":".$DBPORT;
+            }
+            $this->_connect = new mysqli($DBHOST, $DBUSER, $DBPASS, $DBNAME);
 
-        if ($this->_connect->connect_error) {
-            return "Connection Failure";
-        } else {
-            print "Connection Successfull";
+            if ($this->_connect->connect_error) {
+                return "Connection Failure: " .$this->_connect->connect_error;
+            } else {
+                print "Connection Successfull";
+            }
+            break;
+        case 'PDO':
+            if ($DBPORT<>null) {
+                $DBHOST.=":".$DBPORT;
+            }
+            try{
+                $this->_connect = new PDO("mysql:host= $DBHOST;dbname=$DBNAME", $DBUSER, $DBPASS);   
+                /* Set Error Mode */
+                $this->_connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+                echo "Connected Successfully";
+            }catch (PDOException $e){
+                echo "COnnection failed: " .$e->getMessage();
+            }
+            break;
         }
     }
 
