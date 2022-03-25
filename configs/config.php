@@ -14,9 +14,9 @@
  * @link * Null
  */
 
-$conf["_dbType"] = "mysqli"; 
-$conf["_dbHost"] = "Localhost";
+$conf["_dbType"] = "PDO"; /* Msqli */ 
+$conf["_dbHost"] = "127.0.0.1"; /* localhost */
 $conf["_dbName"] = "authordb";
 $conf["_dbUser"] = "root";
-$conf["_dbPass"] = " ";
+$conf["_dbPass"] = "";
 $conf["_dbPort"] = 3306;

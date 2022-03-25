@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Constants file will contain db constants
  * PHP version * ^7

@@ -101,12 +101,12 @@ class DbConnect
                 $DBHOST.=":".$DBPORT;
             }
             try{
-                $this->_connect = new PDO("mysql:host= $DBHOST;dbname=$DBNAME", $DBUSER, $DBPASS);   
+                $this->_connect = new PDO("mysql:host=.$DBHOST; dbname= $DBNAME", $DBUSER, $DBPASS);
                 /* Set Error Mode */
                 $this->_connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
                 echo "Connected Successfully";
             }catch (PDOException $e){
-                echo "COnnection failed: " .$e->getMessage();
+                echo "Connection failed: " .$e->getMessage();
             }
             break;
         }
@@ -124,11 +124,25 @@ class DbConnect
      */
     public function extracted(string $sth)
     {
-        if ($this->connection->query($sth) === true) {
-            "\n";
-            return true;
-        } else {
-            return "Failed!";
+        switch ($this->_dbType) {
+        case 'MySQli':
+            if ($this->_connect->query($sth) === true) { 
+                // change to query later          
+                return true;
+            } else {
+                return "Failed!";
+            }
+            break;
+        case 'PDO':
+            try {
+                $stmt = $this->_connect->prepare($sth);
+
+                $stmt->execute();
+                return true;
+            } catch (PDOException $e) {
+                return $sth . "<br />" . $e->getMessage();
+            }
+            break;
         }
     }
 
