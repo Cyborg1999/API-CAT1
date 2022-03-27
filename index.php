@@ -11,20 +11,22 @@
  <h1>
     Welcome
 </h1>
-<form action = "processes/registration.php" method = "POST" enctype="multipart/form-data">
-    <input type = "text" name = "AuthorFullName" placeholder = "AuthorFullName"/><br>
-    <input type = "email" name = "Authoremail" placeholder = "AuthorEmail" /><br />
-    <input type = "text" name = "AuthorAddress" placeholder="AuthorAddress" /><br />
-    <input type = "text" name = "AuthorBiography" placeholder="AuthorBiography" /><br />
-    <input type = "date" name = "AuthorDateOfBirth" placeholder="AuthorDateOfBirth"/><br>
+<div style="margin: 10 px;">
+<form class="form-group" action = "processes/registration.php" method = "POST" enctype="multipart/form-data">
+    <input class = "col-sm-6 form-input" type = "text" name = "AuthorFullName" placeholder = "AuthorFullName"/><br><br>
+    <input class = "col-sm-6 form-input" type = "email" name = "Authoremail" placeholder = "AuthorEmail" /><br><br>
+    <input class = "col-sm-6 form-input" type = "text" name = "AuthorAddress" placeholder="AuthorAddress" /><br><br>
+    <input class = "col-sm-6 form-input" type = "text" name = "AuthorBiography" placeholder="AuthorBiography" /><br><br>
+    <input class = "col-sm-6 form-input"type = "date" name = "AuthorDateOfBirth" placeholder="AuthorDateOfBirth"/><br><br>
     <label id = "AuthorSus" name = "AuthorSus"> Author Suspended</label><br>
     <input type="radio" id = "AuthorSus" name="AuthorSus" value="Yes">
     <label for="yes">Yes</label>
     <input type="radio" id="AuthorSus" name="AuthorSus" value="no">
-    <label for="no">No</label><br>
-    <input type = "submit" name = "add" value = "Add" /><br />
+    <label for="no">No</label><br><br>
+    <input type = "submit" name = "add" value = "Add" class="btn btn-primary" /><br />
     
-     
+</form>
+</div>
  </body>
 
  </html>

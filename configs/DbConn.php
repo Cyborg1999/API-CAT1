@@ -101,7 +101,8 @@ class DbConnect
                 $DBHOST.=":".$DBPORT;
             }
             try{
-                $this->_connect = new PDO("mysql:host=.$DBHOST; dbname= $DBNAME", $DBUSER, $DBPASS);
+                $dsn = "mysql:host = .$DBHOST; dbname = $DBNAME; port = $DBPORT";
+                $this->_connect = new PDO($dsn, $DBUSER, $DBPASS);
                 /* Set Error Mode */
                 $this->_connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
                 echo "Connected Successfully";
@@ -167,6 +168,35 @@ class DbConnect
         $fieldValues = implode(" ',' ", array_keys($data));
         $sth = "INSERT INTO $table('$fieldNames') VALUES ('$fieldValues')";
         return $this->extracted($sth);
+    }
+    /**
+     * Implement delete()
+     * 
+     * @param query String $table contains data stored in the table
+     * @param Array|String $where contains the array of fields to be deleted 
+     * 
+     * @var String|Array $table 
+     * @var Array|String $data  
+     * @var String $sth 
+     * 
+     * @return String sql statements
+     */
+    public function delete($table,$where) 
+    {
+        $wer = '';
+        if (is_array($where)) {
+            foreach ($where as $clave=>$value) {
+                $wer.= $clave."='".$value."' and ";
+            }
+            $wer   = substr($wer, 0, -4);
+            $where = $wer;
+        }
+        if ($where == null or $where =='') {
+            $sth = "DELETE FROM $table";
+        } else {
+            $sth = "DELETE FROM $table WHERE $where";
+        }
+            return $this->extracted($sth);
     }
 
 

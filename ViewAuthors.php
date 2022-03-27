@@ -14,6 +14,13 @@
  * @link localhost
  */
 require_once "Autoload.php";
+// spl_autoload_register(function ($classname) {
+
+//         include $classname . '.php';
+
+// }
+// );
+
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +29,7 @@ require_once "Autoload.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
     <title>Document</title>
 </head>
 <body>
@@ -59,7 +67,7 @@ require_once "Autoload.php";
                             <td><?php echo $rows->name;?></td>
                             <td><?php echo $rows->email;?></td>
                             <td><?php echo $rows->city;?></td>
-                            <td> <a href="delete.php?id=<?php echo $rows->id;?>" class="btn btn-sm btn-danger">Delete</a> </td>
+                            <td> <a href="processes/deleteAuth.php?id=<?php echo $rows->id; ?>" class="btn btn-sm btn-danger">Delete</a> </td>
                             <td> <a href="update.php?id=<?php echo $rows->id;?>" class="btn btn-sm btn-primary">Update</a> </td>
                         </tr>	
                 <?php		
