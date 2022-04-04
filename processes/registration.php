@@ -14,7 +14,7 @@
  * @link localhost
  */
 
- require_once "Autoload.php";
+ require_once "../Autoload.php";
 
 if (isset($_POST["add"])) {
         $AuthorFullName = $_POST["AuthorFullName"];
@@ -32,7 +32,7 @@ if (isset($_POST["add"])) {
         $insert_sql = $MSQL->insert("authortb", $data);
 
     if ($insert_sql == true) {
-                header("Location: ./ViewAauthors.php");
+                header("Location: ./VeiwAuthors.php");
                 exit;
         "}else{\n";
                 print "Error: ";

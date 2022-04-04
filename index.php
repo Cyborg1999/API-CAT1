@@ -16,7 +16,7 @@
     <input class = "col-sm-6 form-input" type = "text" name = "AuthorFullName" placeholder = "AuthorFullName"/><br><br>
     <input class = "col-sm-6 form-input" type = "email" name = "Authoremail" placeholder = "AuthorEmail" /><br><br>
     <input class = "col-sm-6 form-input" type = "text" name = "AuthorAddress" placeholder="AuthorAddress" /><br><br>
-    <input class = "col-sm-6 form-input" type = "text" name = "AuthorBiography" placeholder="AuthorBiography" /><br><br>
+    <textarea class = "col-sm-6 form-input" type = "text" name = "AuthorBiography" placeholder="AuthorBiography"></textarea><br><br>
     <input class = "col-sm-6 form-input"type = "date" name = "AuthorDateOfBirth" placeholder="AuthorDateOfBirth"/><br><br>
     <label id = "AuthorSus" name = "AuthorSus"> Author Suspended</label><br>
     <input type="radio" id = "AuthorSus" name="AuthorSus" value="Yes">

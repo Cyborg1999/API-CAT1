@@ -13,7 +13,7 @@
  *   
  * @link localhost
  */
-require_once "Autoload.php";
+require_once "../Autoload.php";
 
 if (isset($_POST["delete"])) {
 

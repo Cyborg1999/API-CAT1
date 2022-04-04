@@ -13,7 +13,7 @@
  *   
  * @link localhost
  */
-require_once "Autoload.php";
+require_once "../Autoload.php";
 // spl_autoload_register(function ($classname) {
 
 //         include $classname . '.php';

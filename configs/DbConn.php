@@ -166,7 +166,7 @@ class DbConnect
         $fieldDetails = null;
         $fieldNames = implode('`, `', array_keys($data));
         $fieldValues = implode(" ',' ", array_keys($data));
-        $sth = "INSERT INTO $table('$fieldNames') VALUES ('$fieldValues')";
+        $sth = "INSERT INTO $table ('$fieldNames') VALUES ('$fieldValues')";
         return $this->extracted($sth);
     }
     /**
