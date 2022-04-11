@@ -93,7 +93,7 @@ class DbConnect
             if ($this->_connect->connect_error) {
                 return "Connection Failure: " .$this->_connect->connect_error;
             } else {
-                print "Connection Successfull";
+                print "Connection Successful";
             }
             break;
         case 'PDO':

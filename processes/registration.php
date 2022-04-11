@@ -32,7 +32,7 @@ if (isset($_POST["add"])) {
         $insert_sql = $MSQL->insert("authortb", $data);
 
     if ($insert_sql == true) {
-                header("Location: ./VeiwAuthors.php");
+                header("Location: ./ViewAuthors.php");
                 exit;
         "}else{\n";
                 print "Error: ";

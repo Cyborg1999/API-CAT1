@@ -1,6 +1,6 @@
 <?php
 /**
- * Registration File
+ * Delete Files
  * Php version: *^7
  * 
  * @category Class
